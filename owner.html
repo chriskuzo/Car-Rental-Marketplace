@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Owner Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body class="owner-page">
+  <main class="owner-shell">
+    <section class="owner-top" aria-label="Owner overview">
+      <header class="owner-head">
+        <h1>My Fleet</h1>
+        <div class="owner-avatar" aria-label="Owner profile">CI</div>
+      </header>
+
+      <div class="owner-metrics" aria-label="Fleet metrics">
+        <article class="owner-metric-card">
+          <p class="owner-metric-title">Revenue</p>
+          <p class="owner-metric-value"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> 700k</p>
+        </article>
+        <article class="owner-metric-card">
+          <p class="owner-metric-title">Growth</p>
+          <p class="owner-metric-value owner-metric-positive"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> 25%</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="owner-fleet" aria-label="Your fleet">
+      <header class="fleet-head">
+        <h2>Your Cars</h2>
+        <button type="button">Add Car</button>
+      </header>
+
+      <div class="fleet-list">
+        <article class="fleet-card">
+          <div class="fleet-image" aria-label="Toyota Rav4 image">CAR</div>
+          <div class="fleet-info">
+            <h3>Toyota Rav4 2019</h3>
+            <p class="fleet-meta"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> 12 Bookings</p>
+            <p class="fleet-income fleet-meta"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> 1,500,00 Rwf</p>
+            <p class="fleet-status verified">Verified</p>
+          </div>
+          <div class="fleet-side">
+            <button type="button">Status</button>
+          </div>
+        </article>
+
+        <article class="fleet-card">
+          <div class="fleet-image" aria-label="Hyundai Tucson image">CAR</div>
+          <div class="fleet-info">
+            <h3>Hyundai Tucson 2023</h3>
+            <p class="fleet-meta"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> 12 Bookings</p>
+            <p class="fleet-income zero fleet-meta"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> 0 Rwf</p>
+            <p class="fleet-status pending">Pending</p>
+          </div>
+          <div class="fleet-side">
+            <button type="button">Status</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <nav class="bottom-nav" aria-label="Primary">
+      <a href="index.html" aria-label="Home"><i class="fa-solid fa-house" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Bookings"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Likes"><i class="fa-solid fa-heart" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Profile"><i class="fa-solid fa-user" aria-hidden="true"></i></a>
+    </nav>
+  </main>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Page</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body class="ride-page">
+  <main class="ride-shell">
+    <section class="ride-search" aria-label="Find your booking">
+      <h1 class="ride-heading">Find your booking</h1>
+
+      <label class="field" for="location">
+        <span class="field-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+        <input id="location" type="text" placeholder="Search by location" />
+      </label>
+
+      <div class="date-grid">
+        <label class="field" for="pickup-date">
+          <span class="field-icon"><i class="fa-solid fa-calendar" aria-hidden="true"></i></span>
+          <input id="pickup-date" type="date" />
+        </label>
+
+        <label class="field" for="return-date">
+          <span class="field-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></span>
+          <input id="return-date" type="date" />
+        </label>
+      </div>
+    </section>
+
+    <section class="ride-recommendations" aria-label="Recommended for you">
+      <header class="recommendations-head">
+        <h2>Recommended for you</h2>
+        <a href="#" aria-label="See all cars">See all</a>
+      </header>
+
+      <div class="cars-grid">
+        <article class="car-card">
+          <div class="car-media">CAR IMAGE</div>
+          <div class="car-info">
+            <p><i class="fa-solid fa-tag car-info-icon"></i><strong>Brand:</strong> Toyota</p>
+            <p><i class="fa-solid fa-car car-info-icon"></i><strong>Model:</strong> RAV4</p>
+            <p><i class="fa-solid fa-calendar-days car-info-icon"></i><strong>Year:</strong> 2019</p>
+          </div>
+          <div class="card-actions">
+            <span class="price"><i class="fa-solid fa-money-bill-wave"></i> 80,000/DAY</span>
+            <button type="button"><i class="fa-solid fa-circle-check"></i> Book</button>
+          </div>
+        </article>
+
+        <article class="car-card">
+          <div class="car-media">CAR IMAGE</div>
+          <div class="car-info">
+            <p><i class="fa-solid fa-tag car-info-icon"></i><strong>Brand:</strong> KIA</p>
+            <p><i class="fa-solid fa-car car-info-icon"></i><strong>Model:</strong> Sorento</p>
+            <p><i class="fa-solid fa-calendar-days car-info-icon"></i><strong>Year:</strong> 2011</p>
+          </div>
+          <div class="card-actions">
+            <span class="price"><i class="fa-solid fa-money-bill-wave"></i> 80,000/DAY</span>
+            <button type="button"><i class="fa-solid fa-circle-check"></i> Book</button>
+          </div>
+        </article>
+
+        <article class="car-card">
+          <div class="car-media">CAR IMAGE</div>
+          <div class="car-info">
+            <p><i class="fa-solid fa-tag car-info-icon"></i><strong>Brand:</strong> Hyundai</p>
+            <p><i class="fa-solid fa-car car-info-icon"></i><strong>Model:</strong> Tucson</p>
+            <p><i class="fa-solid fa-calendar-days car-info-icon"></i><strong>Year:</strong> 2023</p>
+          </div>
+          <div class="card-actions">
+            <span class="price"><i class="fa-solid fa-money-bill-wave"></i> 80,000/DAY</span>
+            <button type="button"><i class="fa-solid fa-circle-check"></i> Book</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <nav class="bottom-nav" aria-label="Primary">
+      <a class="active" href="index.html" aria-label="Home"><i class="fa-solid fa-house" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Bookings"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Likes"><i class="fa-solid fa-heart" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Profile"><i class="fa-solid fa-user" aria-hidden="true"></i></a>
+    </nav>
+  </main>
+</body>
+</html>

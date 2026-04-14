@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="welcome-page">
+  <main class="page-shell">
+    <section class="panel" aria-labelledby="page-title">
+      <header class="welcome-brand" aria-label="Branding">
+        <h1 id="page-title">Car Rental Marketplace</h1>
+        <p>Welcome back</p>
+      </header>
+
+      <div class="intro">
+        <h2>What brings you here?</h2>
+        <p>Choose your role to get started</p>
+      </div>
+
+      <div class="role-list" role="list" aria-label="Role selection">
+        <button class="role-card" role="listitem" data-role="renter" type="button">
+          <span class="role-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <circle cx="12" cy="7" r="3.2"></circle>
+              <path d="M6.8 19.2c0-3 2.3-5.2 5.2-5.2s5.2 2.2 5.2 5.2"></path>
+            </svg>
+          </span>
+          <span class="role-content">
+            <span class="role-title">I want to rent a car</span>
+            <span class="role-subtitle">Find and book vehicles</span>
+          </span>
+        </button>
+
+        <button class="role-card" role="listitem" data-role="owner" type="button">
+          <span class="role-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <path d="M3.5 13.8V10l2-3h12.8l2.2 2.8V14"></path>
+              <rect x="5" y="10" width="14" height="5.8" rx="1.2"></rect>
+              <circle cx="7.8" cy="16.3" r="1.5"></circle>
+              <circle cx="16.2" cy="16.3" r="1.5"></circle>
+            </svg>
+          </span>
+          <span class="role-content">
+            <span class="role-title">I want to list my car</span>
+            <span class="role-subtitle">Earn money from your vehicle</span>
+          </span>
+        </button>
+
+        <button class="role-card" role="listitem" data-role="driver" type="button">
+          <span class="role-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <rect x="3.5" y="6" width="17" height="14" rx="2"></rect>
+              <path d="M8 6V4.2M16 6V4.2M12 6V20"></path>
+            </svg>
+          </span>
+          <span class="role-content">
+            <span class="role-title">I am a driver</span>
+            <span class="role-subtitle">Provide driving services</span>
+          </span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
