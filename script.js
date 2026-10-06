@@ -83,14 +83,16 @@ function renderOwnerFleet() {
     .map((car) => {
       const statusClass = car.status === 'Verified' ? 'verified' : 'pending';
       const incomeClass = car.income === 0 ? 'zero' : '';
-      const imageStyles = car.image ? `background-image: url('${car.image}'); background-size: cover; background-position: center;` : '';
 
       return `
         <article class="fleet-card" data-id="${car.id}">
-          <div class="fleet-image" aria-label="${car.brand} ${car.model} image" style="${imageStyles}">${car.image ? '' : 'CAR'}</div>
+          <div class="fleet-image ${car.image ? 'fleet-image-has-photo' : ''}" aria-label="${car.brand} ${car.model} image">
+            ${car.image ? `<img src="${car.image}" alt="${car.brand} ${car.model}" class="fleet-photo" data-image-view="${car.image}" />` : 'CAR'}
+          </div>
           <div class="fleet-info">
             <h3>${car.brand} ${car.model} ${car.year}</h3>
             <p class="fleet-meta"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> ${car.bookings} Bookings</p>
+            <p class="fleet-price fleet-meta"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> ${formatMoney(car.price)}/day</p>
             <p class="fleet-income ${incomeClass} fleet-meta"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> ${formatMoney(car.income)}</p>
             <p class="fleet-status ${statusClass}">${car.status}</p>
           </div>
@@ -129,6 +131,21 @@ function renderOwnerFleet() {
       renderOwnerFleet();
     });
   });
+
+  document.querySelectorAll('.fleet-photo').forEach((image) => {
+    image.addEventListener('click', () => {
+      const modal = document.querySelector('#image-view-modal');
+      const modalImage = document.querySelector('#image-view-modal img');
+
+      if (!modal || !modalImage) {
+        return;
+      }
+
+      modalImage.src = image.dataset.imageView;
+      modal.hidden = false;
+      document.body.classList.add('modal-open');
+    });
+  });
 }
 
 function setupOwnerPage() {
@@ -136,6 +153,8 @@ function setupOwnerPage() {
   const carModal = document.querySelector('#car-modal');
   const closeButton = document.querySelector('.modal-close');
   const cancelButton = document.querySelector('.modal-cancel');
+  const imageViewModal = document.querySelector('#image-view-modal');
+  const imageCloseButton = document.querySelector('.image-close');
   const ownerForm = document.querySelector('#owner-car-form');
   const imageInput = document.querySelector('#car-image');
   const imagePreview = document.querySelector('#car-image-preview');
@@ -184,12 +203,27 @@ function setupOwnerPage() {
   addCarTrigger.addEventListener('click', openModal);
   closeButton?.addEventListener('click', closeModal);
   cancelButton?.addEventListener('click', closeModal);
+  imageCloseButton?.addEventListener('click', () => {
+    if (imageViewModal) {
+      imageViewModal.hidden = true;
+      document.body.classList.remove('modal-open');
+    }
+  });
 
   carModal.addEventListener('click', (event) => {
     if (event.target === carModal) {
       closeModal();
     }
   });
+
+  if (imageViewModal) {
+    imageViewModal.addEventListener('click', (event) => {
+      if (event.target === imageViewModal) {
+        imageViewModal.hidden = true;
+        document.body.classList.remove('modal-open');
+      }
+    });
+  }
 
   ownerForm.addEventListener('submit', async (event) => {
     event.preventDefault();
