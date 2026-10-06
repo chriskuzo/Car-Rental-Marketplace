@@ -30,37 +30,63 @@
     <section class="owner-fleet" aria-label="Your fleet">
       <header class="fleet-head">
         <h2>Your Cars</h2>
-        <button type="button">Add Car</button>
+        <button id="add-car-trigger" type="button">Add Car</button>
       </header>
 
-      <div class="fleet-list">
-        <article class="fleet-card">
-          <div class="fleet-image" aria-label="Toyota Rav4 image">CAR</div>
-          <div class="fleet-info">
-            <h3>Toyota Rav4 2019</h3>
-            <p class="fleet-meta"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> 12 Bookings</p>
-            <p class="fleet-income fleet-meta"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> 1,500,00 Rwf</p>
-            <p class="fleet-status verified">Verified</p>
-          </div>
-          <div class="fleet-side">
-            <button type="button">Status</button>
-          </div>
-        </article>
-
-        <article class="fleet-card">
-          <div class="fleet-image" aria-label="Hyundai Tucson image">CAR</div>
-          <div class="fleet-info">
-            <h3>Hyundai Tucson 2023</h3>
-            <p class="fleet-meta"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> 12 Bookings</p>
-            <p class="fleet-income zero fleet-meta"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> 0 Rwf</p>
-            <p class="fleet-status pending">Pending</p>
-          </div>
-          <div class="fleet-side">
-            <button type="button">Status</button>
-          </div>
-        </article>
-      </div>
+      <div class="fleet-list" aria-live="polite"></div>
     </section>
+
+    <div id="car-modal" class="car-modal" hidden>
+      <div class="car-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="car-modal-title">
+        <div class="car-modal-header">
+          <h3 id="car-modal-title">Add a car</h3>
+          <button type="button" class="modal-close" aria-label="Close add car form">×</button>
+        </div>
+
+        <form id="owner-car-form" class="owner-car-form">
+          <div class="upload-box">
+            <label for="car-image">Main picture (front view)</label>
+            <input id="car-image" name="image" type="file" accept="image/*" />
+            <img id="car-image-preview" class="image-preview" alt="Selected car preview" />
+          </div>
+
+          <div class="form-grid">
+            <div class="input-group">
+              <label for="car-brand">Brand</label>
+              <input id="car-brand" name="brand" type="text" placeholder="Toyota" required />
+            </div>
+
+            <div class="input-group">
+              <label for="car-model">Model</label>
+              <input id="car-model" name="model" type="text" placeholder="Rav4" required />
+            </div>
+
+            <div class="input-group">
+              <label for="car-year">Year</label>
+              <input id="car-year" name="year" type="number" min="2000" max="2035" placeholder="2024" required />
+            </div>
+
+            <div class="input-group">
+              <label for="car-price">Price per day</label>
+              <input id="car-price" name="price" type="number" min="0" step="1000" placeholder="80000" required />
+            </div>
+
+            <div class="input-group input-group-full">
+              <label for="car-status">Status</label>
+              <select id="car-status" name="status">
+                <option value="Verified">Verified</option>
+                <option value="Pending">Pending</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="secondary-btn modal-cancel">Cancel</button>
+            <button type="submit" class="submit-car">Save Car</button>
+          </div>
+        </form>
+      </div>
+    </div>
 
     <nav class="bottom-nav" aria-label="Primary">
       <a href="index.html" aria-label="Home"><i class="fa-solid fa-house" aria-hidden="true"></i></a>
@@ -69,5 +95,7 @@
       <a href="#" aria-label="Profile"><i class="fa-solid fa-user" aria-hidden="true"></i></a>
     </nav>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
